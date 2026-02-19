@@ -1,6 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    var emp = ViewData["myEmployee"] as Employee;
+    var empl = ViewData["empList"] as List<Employee>;
 }
 
 <div class="text-center">
@@ -10,11 +10,23 @@
 
 </div>
 
-  @{
+     
+    @{
+        if(empl != null){
+        foreach(var e in empl){
+            <p>@e.EmpId</p>
+            <p>@e.EmpName</p>
+            <p>@e.Designation</p>
+            <p>@e.Salary</p>
+        }
+    }}
+
+
+  @* @{
     if(emp != null){
     <p>@emp.EmpId</p>
     <p>@emp.EmpName</p>
     <p>@emp.Designation</p>
     <p>@emp.Salary</p>
     }
-  }
+  } *@
