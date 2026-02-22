@@ -24,16 +24,35 @@ public class HomeController : Controller
         // };
         // ViewData["myEmployee"] = emp;
 
-       var employees = new List<Employee>(){
+    //    var employees = new List<Employee>(){
+    //     new Employee{EmpId = 1, EmpName = "John Doe", Designation = "Manager", Salary = 50000},
+    //     new Employee{EmpId = 2, EmpName = "Jane Doe", Designation = "Developer", Salary = 30000},
+    //     new Employee{EmpId = 3, EmpName = "Jim Doe", Designation = "Designer", Salary = 40000},
+    //     new Employee{EmpId = 4, EmpName = "Jill Doe", Designation = "HR", Salary = 20000},
+    //     new Employee{EmpId = 5, EmpName = "Jack Doe", Designation = "Marketing", Salary = 10000},
+    //    };
+    //    ViewData["empList"] = employees;
+
+
+    // strongly typed view
+    // Employee emp = new Employee(){
+    //     EmpId = 1,
+    //     EmpName = "John Doe",
+    //     Designation = "Manager",
+    //     Salary = 50000
+    // };
+
+    List<Employee> emp = new List<Employee>(){
         new Employee{EmpId = 1, EmpName = "John Doe", Designation = "Manager", Salary = 50000},
         new Employee{EmpId = 2, EmpName = "Jane Doe", Designation = "Developer", Salary = 30000},
         new Employee{EmpId = 3, EmpName = "Jim Doe", Designation = "Designer", Salary = 40000},
         new Employee{EmpId = 4, EmpName = "Jill Doe", Designation = "HR", Salary = 20000},
         new Employee{EmpId = 5, EmpName = "Jack Doe", Designation = "Marketing", Salary = 10000},
-       };
-       ViewData["empList"] = employees;
+    };
+
+    
         
-        return View();
+        return View(emp);
     }
 
     public IActionResult Privacy()

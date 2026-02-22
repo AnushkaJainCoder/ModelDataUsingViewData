@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Employee>
+@{
     ViewData["Title"] = "Home Page";
     var empl = ViewData["empList"] as List<Employee>;
 }
@@ -9,9 +10,20 @@
   
 
 </div>
-
+@* <div>@Model.EmpId</div>
+<div>@Model.EmpName</div>
+<div>@Model.Designation</div>
+<div>@Model.Salary</div> *@
      
-    @{
+     @{
+        foreach(var e in @Model){
+            <div>@e.EmpId</div>
+            <div>@e.EmpName</div>
+            <div>@e.Designation</div>
+            <div>@e.Salary</div>
+        }
+     }
+    @* @{
         if(empl != null){
         foreach(var e in empl){
             <p>@e.EmpId</p>
@@ -19,7 +31,7 @@
             <p>@e.Designation</p>
             <p>@e.Salary</p>
         }
-    }}
+    }} *@
 
 
   @* @{
